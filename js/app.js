@@ -1,3 +1,4 @@
+'use strict';
 // Calculate number of cookies each location must make to manage supplies, inventory baking schedule
 
 // The number of cookies to make depends on the hours of operation, and all factors unique to each location. The minimum number of customers per hour, the maximum number of customers per hour, the average number of cookies purchased per customer.
@@ -137,7 +138,7 @@ var tokyo = {
 
     for (var i = 6; i < 13; i++) {
 
-      var customers = getRandomArbitrary(23, 65)
+      var customers = getRandomArbitrary(3, 24)
 
       var simCookies = simulatedCookies(customers, this.avgCookies)
       this.total += simCookies
@@ -149,7 +150,7 @@ var tokyo = {
     }
     for (var i = 1; i < 8; i++) {
 
-      var customers = getRandomArbitrary(23, 65)
+      var customers = getRandomArbitrary(3, 24)
 
       var simCookies = simulatedCookies(customers, this.avgCookies)
       this.total += simCookies
@@ -193,7 +194,7 @@ var dubai = {
 
     for (var i = 6; i < 13; i++) {
 
-      var customers = getRandomArbitrary(23, 65)
+      var customers = getRandomArbitrary(11, 38)
 
       var simCookies = simulatedCookies(customers, this.avgCookies)
       this.total += simCookies
@@ -205,7 +206,7 @@ var dubai = {
     }
     for (var i = 1; i < 8; i++) {
 
-      var customers = getRandomArbitrary(23, 65)
+      var customers = getRandomArbitrary(11, 38)
 
       var simCookies = simulatedCookies(customers, this.avgCookies)
       this.total += simCookies
@@ -249,7 +250,7 @@ var paris = {
 
     for (var i = 6; i < 13; i++) {
 
-      var customers = getRandomArbitrary(23, 65)
+      var customers = getRandomArbitrary(20, 38)
 
       var simCookies = simulatedCookies(customers, this.avgCookies)
       this.total += simCookies
@@ -261,7 +262,7 @@ var paris = {
     }
     for (var i = 1; i < 8; i++) {
 
-      var customers = getRandomArbitrary(23, 65)
+      var customers = getRandomArbitrary(20, 38)
 
       var simCookies = simulatedCookies(customers, this.avgCookies)
       this.total += simCookies
@@ -304,7 +305,7 @@ var lima = {
 
     for (var i = 6; i < 13; i++) {
 
-      var customers = getRandomArbitrary(23, 65)
+      var customers = getRandomArbitrary(2, 16)
 
       var simCookies = simulatedCookies(customers, this.avgCookies)
       this.total += simCookies
@@ -316,7 +317,7 @@ var lima = {
     }
     for (var i = 1; i < 8; i++) {
 
-      var customers = getRandomArbitrary(23, 65)
+      var customers = getRandomArbitrary(2, 16)
 
       var simCookies = simulatedCookies(customers, this.avgCookies)
       this.total += simCookies
