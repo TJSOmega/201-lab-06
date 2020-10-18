@@ -386,23 +386,52 @@ Stores.prototype.customerRandom = function () {
 };
 
 Stores.prototype.hourlytotal = function () {
-  var hourly = this.customerRandom() * this.cookiesavg
-  this.report.push(hourly)
+  var hourly = Math.ceil(this.customerRandom() * this.cookiesavg);
+  this.report.push(hourly);
   return hourly
 };
 
 Stores.prototype.totalCookiesSold = function () {
   for (var i = 0; i < timesArray.length; i++) {
-    this.totalCookies += this.hourlytotal
+    this.totalCookies += this.hourlytotal();
   }
 };
 
 Stores.prototype.render = function() {
   this.totalCookiesSold()
+  var tr = document.createElement('tr')
+  var td = document.createElement('td')
+  td.textContent = this.name
+
+  tr.appendChild(td)
+  
+
+  for (var i = 0; i < this.report.length; i++) {
+    var td = document.createElement('td')
+    td.textContent = this.report[i]
+    tr.appendChild(td)
+  };
+  parentElement.appendChild(tr)
+
+   var td = document.createElement
+   var tr = document.createElement
+
+   td.textContent = this.totalCookies
+
+   tr.appendChild(td)
+  
+
+
 };
+
+
 
 var parentElement = document.getElementById('table')
 var tr = document.createElement('tr')
+var td = document.createElement('td')
+td.textContent = ''
+tr.appendChild(td)
+parentElement.appendChild(tr)
 
 for (var i = 0; i < timesArray.length; i++) {
   var td = document.createElement('td')
@@ -411,10 +440,10 @@ for (var i = 0; i < timesArray.length; i++) {
 }
 parentElement.appendChild(tr)
 
+
 var seattle = new Stores('Seattle Store', 23, 65, 6.3)
 
 seattle.render()
-
 
 // console.log(seattle.salesReport)
 
