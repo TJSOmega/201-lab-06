@@ -444,8 +444,17 @@ tr.appendChild(td)
 
 
 var seattle = new Stores('Seattle Store', 23, 65, 6.3)
+var tokyo =	 new Stores ('Tokyo Store', 3, 24, 1.2)
+var dubai =	 new Stores ('Dubia Store', 11, 38, 3.7)
+var paris =	 new Stores ('Paris Store', 20, 38, 2.3)
+var lima =	 new Stores ('Lima Store', 2, 16, 4.6)
+
 
 seattle.render()
+tokyo.render()
+dubai.render()
+paris.render()
+lima.render()
 
 // console.log(seattle.salesReport)
 
