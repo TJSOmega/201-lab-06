@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+  margin: 30px auto;
+  font-size: xx-large;
+  color: salmon;
+}
+body {
+  background-color: teal;
+  margin: 30px auto
+}
+
+table {
+  margin: auto;
+  border: solid salmon;
+}
+
+tr {
+  padding: auto;
+  border: 2px solid salmon;
+  border-radius: 5px;
+}
+
+td {
+  border: solid;
+  border: 2px solid salmon;
+  border-radius: 5px;
+}
