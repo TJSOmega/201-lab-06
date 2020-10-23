@@ -29,6 +29,14 @@ function numbergen(min, max) {
 
 var timesArray = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
+var hourTotalArray = [];
+
+var grandTotal = 0;
+
+var allStores = [];
+
+var parentElement = document.getElementById('table')
+
 //Store Constructor
 function Stores(name, mincustomers, maxcustomers, cookiesavg) {
   this.name = name;
@@ -37,7 +45,7 @@ function Stores(name, mincustomers, maxcustomers, cookiesavg) {
   this.cookiesavg = cookiesavg;
   this.totalCookies = 0;
   this.report = []
-
+  allStores.push(this);
 }
 
 Stores.prototype.customerRandom = function () {
@@ -81,9 +89,19 @@ Stores.prototype.render = function () {
 };
 
 
+// function calcTotals() {
+//   for (var i = 0; i< timesArray.length; i++) {
+//     var hourlyTotal = 0;
+//     for (var j = 0; j < allStores.length; j++) {
+//       hourlyTotal += allStores[j].report[i];
+//     }
+//     hourTotalArray.push(hourlyTotal);
+//     grandTotal += hourlyTotal;
+//   }
+// }
 
+function renderHeader() {
 
-var parentElement = document.getElementById('table')
 var tr = document.createElement('tr')
 var td = document.createElement('td')
 td.textContent = ''
@@ -91,26 +109,54 @@ tr.appendChild(td)
 parentElement.appendChild(tr)
 
 for (var i = 0; i < timesArray.length; i++) {
-  var td = document.createElement('td')
-  td.textContent = timesArray[i]
-  tr.appendChild(td)
+  var td = document.createElement('td');
+  td.textContent = timesArray[i];
+  tr.appendChild(td);
 }
-parentElement.appendChild(tr)
+parentElement.appendChild(tr);
 
-var td = document.createElement('td')
-td.textContent = 'Location totals'
-tr.appendChild(td)
-
-
-var seattle = new Stores('Seattle Store', 23, 65, 6.3)
-var tokyo =	 new Stores ('Tokyo Store', 3, 24, 1.2)
-var dubai =	 new Stores ('Dubia Store', 11, 38, 3.7)
-var paris =	 new Stores ('Paris Store', 20, 38, 2.3)
-var lima =	 new Stores ('Lima Store', 2, 16, 4.6)
+var td = document.createElement('td');
+td.textContent = 'Location totals';
+tr.appendChild(td);
+}
 
 
-seattle.render()
-tokyo.render()
-dubai.render()
-paris.render()
-lima.render()
+// function renderFooter() {
+
+//   var tr = document.createElement('tr');
+//   var td = document.createElement('td');
+//   td.textContent = 'Totals';
+//   tr.appendChild(td);
+//   parentElement.appendChild(tr);
+  
+//   for (var i = 0; i < timesArray.length; i++) {
+//     var td = document.createElement('td');
+//     td.textContent = hourTotalArray[i];
+//     tr.appendChild(td);
+//   }
+//   parentElement.appendChild(tr);
+  
+//   var td = document.createElement('td');
+//   td.textContent = grandTotal;
+//   tr.appendChild(td);
+  }
+
+var seattle = new Stores('Seattle Store', 23, 65, 6.3);
+var tokyo =	 new Stores ('Tokyo Store', 3, 24, 1.2);
+var dubai =	 new Stores ('Dubia Store', 11, 38, 3.7);
+var paris =	 new Stores ('Paris Store', 20, 38, 2.3);
+var lima =	 new Stores ('Lima Store', 2, 16, 4.6);
+
+
+
+renderHeader();
+
+seattle.render();
+tokyo.render();
+dubai.render();
+paris.render();
+lima.render();
+
+calcTotals();
+
+renderFooter()
