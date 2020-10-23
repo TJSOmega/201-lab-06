@@ -12,15 +12,17 @@ body {
 table {
   margin: auto;
   border: solid salmon;
+  padding: 10px auto;
 }
 
 tr {
-  padding: auto;
+  padding: 10px auto;
   border: 2px solid salmon;
   border-radius: 5px;
 }
 
 td {
+  padding: 10px;
   border: solid;
   border: 2px solid salmon;
   border-radius: 5px;
