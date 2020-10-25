@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title> 
-      Salmon Cookies
-    </title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <header>
-      <h1>Salmon Cookies</h1>
-    </header>
-    <main id="stores">
-      <table id="table">
 
-      </table>
-      
-    </main>
-    <footer>
+<head>
+  <title>
+    Salmon Cookies
+  </title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-    </footer>
-    <script src="js/app.js"></script>
-  </body>
-  
+<body>
+  <header>
+    <h1>Salmon Cookies</h1>
+
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="sales.html">SALES</a></li>
+      <li><a href="sales.html">ABOUT US</a></li>
+      <li><a href="sales.html">HEALTH FACTS</a></li>
+    </ul>
+    <form id='form'>
+      <fieldset>
+        <label for="Store">Enter Store Name</label>
+        <input type="text" name="store">
+
+        <label for="Minimum Customers">Minimum Customers</label>
+        <input type="number" name="minimumCustomers">
+
+        <label for="Maximum Customers">Maximum Customers</label>
+        <input type="number" name="maximumCustomers">
+
+        <label for="Average Cookies">Average Cookies</label>
+        <input type="float" name="averageCookies">
+
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+    <h2>Sales Info</h2>
+  </header>
+  <main id="stores">
+    <table id="table">
+
+    </table>
+
+  </main>
+  <footer>
+
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+
 </html>
